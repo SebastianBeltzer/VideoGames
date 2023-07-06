@@ -1,12 +1,12 @@
 const { Videogame, Genre } = require("../db");
 
 const postVideogames = async (req, res) => {
-  const { name, description, plataforms, date, rating, image, genres } =
+  const { name, description, platforms, date, rating, image, genres } =
     req.body;
   if (
     !name ||
     !description ||
-    !plataforms ||
+    !platforms ||
     !date ||
     !rating ||
     !image ||
@@ -27,7 +27,7 @@ const postVideogames = async (req, res) => {
     const newGame = await Videogame.create({
       name,
       description,
-      plataforms,
+      platforms,
       date,
       rating,
       image,

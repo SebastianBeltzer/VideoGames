@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      plataforms: {
+      platforms: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -41,6 +41,6 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
     },
-    { timestaps: false }
+    { timestamps: false }
   );
 };

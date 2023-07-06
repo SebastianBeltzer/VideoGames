@@ -16,7 +16,7 @@ const getDataBase = async () => {
       id: elemente.id,
       description: elemente.description,
       genres: elemente.Genres.map((genre) => genre.name),
-      plataformas: elemente.plataformas,
+      platformas: elemente.platformas,
       fecha: elemente.fecha,
       rating: elemente.rating,
       image: elemente.image,
