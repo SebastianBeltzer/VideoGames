@@ -13,4 +13,4 @@ const getGenres = async () => {
   }
 };
 
-module.exports = { getGenres };
+module.exports = getGenres;

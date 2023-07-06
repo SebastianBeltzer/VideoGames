@@ -1,13 +1,16 @@
 const express = require("express");
+const getIdVideogame = require("../../controllers/getIdVideogames");
+const getAllGames = require("../../controllers/getAll");
+
 const router = express.Router();
 
 router.get("/:id", async (req, res) => {
-  await getId(req, res);
+  await getIdVideogame(req, res);
 });
 
 router.get("/", async (req, res) => {
   const name = req.query.name;
-  const allVideogame = await getAllVideogames();
+  const allVideogame = await getAllGames();
   const uniqueSet = new Set(allVideogame);
   const uniqueArray = Array.from(uniqueSet);
   if (name) {

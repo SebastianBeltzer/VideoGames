@@ -1,5 +1,6 @@
 const express = require("express");
 const { Genre } = require("../../db");
+const getGenres = require("../../controllers/getGenres");
 
 const router = express.Router();
 
