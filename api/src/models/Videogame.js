@@ -20,15 +20,15 @@ module.exports = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      plataformas: {
+      plataforms: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      imagen: {
+      image: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      fecha: {
+      date: {
         type: DataTypes.STRING,
         allowNull: false,
       },
