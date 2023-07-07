@@ -3,14 +3,16 @@ require("dotenv").config();
 const KEY = process.env.API_KEY;
 const { Videogame, Genre } = require("../db");
 
-const createVideogameById = async (req, res) => {
+const getOrCreateVideogameById = async (req, res) => {
   try {
     const { id } = req.params;
+
     const videogame = await Videogame.findOne({
       where: {
         apiId: id,
       },
     });
+
     if (!videogame) {
       const { data } = await axios(
         `https://api.rawg.io/api/games/${id}?key=${KEY}`
@@ -20,7 +22,7 @@ const createVideogameById = async (req, res) => {
         apiId: newId,
         description: data.description_raw,
         platforms: data.platforms
-          .map((plataform) => plataform.platform.name)
+          .map((platform) => platform.platform.name)
           .join(", "),
         date: data.released,
         rating: data.rating,
@@ -41,11 +43,26 @@ const createVideogameById = async (req, res) => {
       if (!res.headersSent) {
         return res.status(200).json(getNewVideogameId);
       }
+    } else {
+      const videoGame = videogame;
+      const idResults = {
+        name: videoGame.name,
+        apiId: videoGame.apiId,
+        description: videoGame.description,
+        genres: videoGame.Genres.map((genre) => genre.name).join(", "),
+        platforms: videoGame.platforms
+          .map((platform) => platform.platform.name)
+          .join(", "),
+        date: videoGame.date,
+        rating: videoGame.rating,
+        image: videoGame.image,
+      };
+
+      return res.status(200).json(idResults);
     }
-    res.status(200).send(videogame);
   } catch (error) {
-    res.status(400).send({ error: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
-module.exports = createVideogameById;
+module.exports = getOrCreateVideogameById;
