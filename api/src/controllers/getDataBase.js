@@ -2,27 +2,24 @@ require("dotenv").config();
 const { Videogame, Genre } = require("../db");
 
 const getDataBase = async () => {
-  const reserver = await Videogame.findAll({
-    include: [
-      {
-        model: Genre,
-        through: "VideogameGenre",
-      },
-    ],
+  const cantidad = await Videogame.findAll({
+    include: [{ model: Genre, through: "VideogameGenre" }],
   });
-  const allPost = reserver.map((elemente) => {
+  //
+  const allPostDB = cantidad.map((el) => {
+    // mapeo y mando solo lo que quiero mostrar en la web de posteos
     return {
-      name: elemente.name,
-      id: elemente.id,
-      description: elemente.description,
-      genres: elemente.Genres.map((genre) => genre.name),
-      platformas: elemente.platformas,
-      fecha: elemente.fecha,
-      rating: elemente.rating,
-      image: elemente.image,
+      name: el.name,
+      apiId: el.id,
+      description: el.description,
+      genres: el.Genres.map((genre) => genre.name),
+      platforms: el.plataformas,
+      date: el.fecha,
+      rating: el.rating,
+      image: el.image,
     };
   });
-  return allPost;
+  return allPostDB;
 };
 
 module.exports = getDataBase;

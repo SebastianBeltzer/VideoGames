@@ -1,11 +1,11 @@
 const express = require("express");
-const getOrCreateVideogameById = require("../../controllers/getOrCreateVideogameById");
+const getIdVideogame = require("../../controllers/getIdVideogames");
 const getAllGames = require("../../controllers/getAll");
 
 const router = express.Router();
 
 router.get("/:id", async (req, res) => {
-  await getOrCreateVideogameById(req, res);
+  await getIdVideogame(req, res);
 });
 
 router.get("/", async (req, res) => {
