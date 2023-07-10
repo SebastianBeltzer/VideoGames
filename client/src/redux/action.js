@@ -16,7 +16,7 @@ import axios from "axios";
 
 export const addVG = (videogame) => {
   // post
-  const endpoint = "http://localhost:3001/posteados";
+  const endpoint = "http://localhost:4000/posteados";
   return async (dispatch) => {
     try {
       const { data } = await axios.post(endpoint, videogame);
@@ -32,7 +32,7 @@ export const addVG = (videogame) => {
 };
 export const putVG = (videogame) => {
   // put
-  const endpoint = "http://localhost:3001/posteados/";
+  const endpoint = "http://localhost:4000/posteados/";
   return async (dispatch) => {
     try {
       const { data } = await axios.put(endpoint, videogame);
@@ -48,7 +48,7 @@ export const putVG = (videogame) => {
 };
 
 export const removeVG = (id) => {
-  const endpoint = `http://localhost:3001/posteados/${id}`;
+  const endpoint = `http://localhost:4000/posteados/${id}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.delete(endpoint);
@@ -65,7 +65,7 @@ export const removeVG = (id) => {
 
 export const getVGDetail = (id) => {
   // detail
-  const endpoint = `http://localhost:3001/videogames/${id}`;
+  const endpoint = `http://localhost:4000/videogames/${id}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -79,7 +79,7 @@ export const getVGDetail = (id) => {
 };
 export const getVGName = (name) => {
   // get name vg
-  const endpoint = `http://localhost:3001/videogames/?name=${name}`;
+  const endpoint = `http://localhost:4000/videogames/?name=${name}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -94,7 +94,7 @@ export const getVGName = (name) => {
   };
 };
 export function filterCards(genre) {
-  const endpoint = "http://localhost:3001/videogames";
+  const endpoint = "http://localhost:4000/videogames";
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -115,7 +115,7 @@ export function filterCards(genre) {
   };
 }
 export function OrderCardsAz(order) {
-  const endpoint = "http://localhost:3001/videogames";
+  const endpoint = "http://localhost:4000/videogames";
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -145,7 +145,7 @@ export function OrderCardsAz(order) {
 }
 export const getAllVG = () => {
   // get all vg
-  const endpoint = "http://localhost:3001/videogames";
+  const endpoint = "http://localhost:4000/videogames";
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
@@ -163,7 +163,7 @@ export const getAllVG = () => {
 export const getAllPosts = (event) => {
   // get all posts
   try {
-    const endpoint = "http://localhost:3001/videogames";
+    const endpoint = "http://localhost:4000/videogames";
 
     return async (dispatch) => {
       const { data } = await axios.get(endpoint);
@@ -171,20 +171,6 @@ export const getAllPosts = (event) => {
         return dispatch({
           type: GET_ALL_POSTS,
           payload: data,
-        });
-      }
-      if (event === "Api") {
-        const gamesAPI = data?.filter((game) => game.createInDb === "Api");
-        return dispatch({
-          type: GET_ALL_POSTS,
-          payload: gamesAPI,
-        });
-      }
-      if (event === "Db") {
-        const gamesDB = data?.filter((game) => game.createInDb !== "Api");
-        return dispatch({
-          type: GET_ALL_POSTS,
-          payload: gamesDB,
         });
       }
     };
@@ -195,7 +181,7 @@ export const getAllPosts = (event) => {
 
 export const getGenres = () => {
   // get genres
-  const endpoint = "http://localhost:3001/genres";
+  const endpoint = "http://localhost:4000/genres";
   try {
     return async (dispatch) => {
       const { data } = await axios.get(endpoint);
@@ -211,7 +197,7 @@ export const getGenres = () => {
 };
 export const getGenresDB = () => {
   // get genres
-  const endpoint = "http://localhost:3001/genres/db";
+  const endpoint = "http://localhost:4000/genres/db";
   try {
     return async (dispatch) => {
       const { data } = await axios.get(endpoint);
@@ -228,7 +214,7 @@ export const getGenresDB = () => {
 
 export const OrderRating = (order) => {
   // obtener calificaciones de la orden
-  const endpoint = "http://localhost:3001/videogames";
+  const endpoint = "http://localhost:4000/videogames";
   return async (dispatch) => {
     try {
       const { data } = await axios.get(endpoint);
