@@ -16,7 +16,7 @@ import axios from "axios";
 
 export const addVG = (videogame) => {
   // post
-  const endpoint = "http://localhost:4000/posteados";
+  const endpoint = "http://localhost:4000/posts";
   return async (dispatch) => {
     try {
       const { data } = await axios.post(endpoint, videogame);
@@ -32,7 +32,7 @@ export const addVG = (videogame) => {
 };
 export const putVG = (videogame) => {
   // put
-  const endpoint = "http://localhost:4000/posteados/";
+  const endpoint = "http://localhost:4000/posts/";
   return async (dispatch) => {
     try {
       const { data } = await axios.put(endpoint, videogame);
@@ -48,7 +48,7 @@ export const putVG = (videogame) => {
 };
 
 export const removeVG = (id) => {
-  const endpoint = `http://localhost:4000/posteados/${id}`;
+  const endpoint = `http://localhost:4000/posts/${id}`;
   return async (dispatch) => {
     try {
       const { data } = await axios.delete(endpoint);
