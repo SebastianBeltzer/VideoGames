@@ -15,7 +15,7 @@ function Card({ id, name, rating, genres, image }) {
     return stars;
   };
   return (
-    <Link to={`/HomePage/${id}`}>
+    <Link to={`/Home/${id}`}>
       <div
         key={id}
         className={style.cd_card}

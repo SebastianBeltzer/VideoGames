@@ -12,7 +12,7 @@ import Nav from "../nav/nav.jsx";
 import Load from "../loading/loading.jsx";
 import style from "./home.module.css";
 
-const HomePage = () => {
+const Home = () => {
   const dispatch = useDispatch();
   const allGenres = useSelector((state) => state.filterGenres);
   const [loading, setLoading] = useState(true);
@@ -109,4 +109,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

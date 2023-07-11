@@ -8,7 +8,7 @@ const Nav = () => {
   return (
     <nav className={style.navbar}>
       <div className={style.left_buttoms}>
-        <NavLink to="/HomePage">
+        <NavLink to="/Home">
           <button>Inicio</button>
         </NavLink>
         <NavLink to="/Mygames">
