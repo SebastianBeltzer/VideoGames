@@ -11,7 +11,7 @@ import {
   GET_ALL_POSTS,
   FILTER_GENERS_DB,
   FILTER,
-} from "./actions-types";
+} from "./action-type";
 
 const initialState = {
   allvideogames: [],

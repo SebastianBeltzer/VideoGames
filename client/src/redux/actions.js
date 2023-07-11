@@ -11,7 +11,7 @@ import {
   ORDER_ALFABETICO,
   ORDER_RATINGS,
   GET_ALL_POSTS,
-} from "./actions-types";
+} from "./action-type";
 import axios from "axios";
 
 export const addVG = (videogame) => {
@@ -26,7 +26,7 @@ export const addVG = (videogame) => {
         payload: data,
       });
     } catch (error) {
-      alert(message);
+      alert(error.message);
     }
   };
 };

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { Videogame, Genres } = require("../../db");
+const { Videogame, Genre } = require("../../db");
 const deleteVideogame = require("../../controllers/deleteVideogame");
 const putVideogame = require("../../controllers/putVideogame");
 const getDataBase = require("../../controllers/getDataBase");
@@ -10,7 +10,7 @@ const postVideogames = require("../../controllers/postvideogame");
 router.get("/", async (req, res) => {
   try {
     const cantidad = await Videogame.findAll({
-      include: [{ model: Genres, through: "videogame_genres" }],
+      include: [{ model: Genre, through: "VideogameGenre" }],
     });
     if (cantidad.length === 0)
       return res.status(200).send("no se encuentra ningun videogame subido");
