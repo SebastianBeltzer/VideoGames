@@ -54,9 +54,9 @@ const Home = () => {
       {loading ? (
         <Load />
       ) : (
-        <div>
-          <Nav />
-          <div className={style.contenedor}>
+        <div className={style.grid__container}>
+          <Nav className={style.nav} />
+          <div className={style.sidebar}>
             <div>
               <h4 className={style.h3_select}>Elige el Genero del VideoGame</h4>
               <select name="Genres" onChange={handleFilter}>
@@ -102,7 +102,7 @@ const Home = () => {
               </select>
             </div>
           </div>
-          <Cards />{" "}
+          <Cards className={style.cards} />{" "}
         </div>
       )}
     </div>

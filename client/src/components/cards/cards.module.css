@@ -1,7 +1,13 @@
 .ordenador {
+  margin-top: 70px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding-left: 350px;
+  padding-right: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 60px;
+  grid-template-columns: repeat(3, 1fr); /* Cambiamos a 3 columnas */
+  grid-gap: 60px;
+  grid-auto-rows: minmax(200px, auto); /* Establecemos la altura de las filas */
+}
+.Divpagina {
+  padding-left: 450px;
 }
