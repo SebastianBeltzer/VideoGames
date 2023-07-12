@@ -99,3 +99,10 @@
     transform: skewX(10deg) skewY(-10deg);
   }
 }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

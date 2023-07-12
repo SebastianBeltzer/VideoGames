@@ -23,7 +23,7 @@ const Nav = () => {
       <NavLink to="/">
         <button>Landing</button>
       </NavLink>
-      <NavLink to="/asdasda">
+      <NavLink to="/Error">
         <button>Error</button>
       </NavLink>
     </nav>

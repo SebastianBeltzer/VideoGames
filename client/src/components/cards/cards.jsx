@@ -19,19 +19,24 @@ export default function Cards() {
 
   const videogamesAll = allVg;
   return (
-    <div className={style.cardList}>
-      {videogamesAll
-        ?.slice((pagina - 1) * porPagina, (pagina - 1) * porPagina + porPagina)
-        .map((vg) => (
-          <Card
-            key={vg.id}
-            id={vg.id}
-            name={vg.name}
-            rating={vg.rating}
-            genres={vg.genres.join(", ")}
-            image={vg.image}
-          />
-        ))}
+    <div>
+      <div className={style.ordenador}>
+        {videogamesAll
+          ?.slice(
+            (pagina - 1) * porPagina,
+            (pagina - 1) * porPagina + porPagina
+          )
+          .map((vg) => (
+            <Card
+              key={vg.id}
+              id={vg.id}
+              name={vg.name}
+              rating={vg.rating}
+              genres={vg.genres.join(", ")}
+              image={vg.image}
+            />
+          ))}
+      </div>
       <div className={style.Divpagina}>
         <Paginate pagina={pagina} setPagina={setPagina} maximo={maximo} />
       </div>

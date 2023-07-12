@@ -15,7 +15,7 @@ const Paginate = ({ pagina, setPagina, maximo }) => {
   };
 
   const onKeyDown = (event) => {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       setPagina(parseInt(event.target.value));
       if (
         parseInt(event.target.value < 1) ||
