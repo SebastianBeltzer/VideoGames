@@ -14,22 +14,27 @@ export default function SearchBar() {
   };
   return (
     <div className={style.searchBox}>
-      <input
-        placeholder="Name VideoGame 🔍"
-        type="search"
-        value={search}
-        onChange={handleChange}
-      />
-      <button
-        className={style.button}
-        type="Submit"
-        onClick={() => {
-          handleSubmit();
-          setSearch("");
-        }}
-      >
-        Buscar
-      </button>
+      <div className={style.inputwrapper}>
+        <input
+          className={style.inputbox}
+          placeholder="Search for your favorite video game by its name here."
+          type="search"
+          value={search}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <button
+          className={style.btn}
+          type="Submit"
+          onClick={() => {
+            handleSubmit();
+            setSearch("");
+          }}
+        >
+          <span>Buscar</span>
+        </button>
+      </div>
     </div>
   );
 }

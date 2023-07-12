@@ -5,8 +5,17 @@ const Landing = () => {
     <div className={style.fondo}>
       <div>
         <div className={style.Box}>
-          <h1 className={style.titleH1}>Ingresa a Pac Games</h1>
-          <button className={style.botondeinicio}>
+          <div className={style.title}>
+            <button className={style.bttn}>
+              <span className={style.actualtext}>
+                &nbsp;Ingresa_a_CYBER/GAMES&nbsp;
+              </span>
+              <span className={style.hovertext} aria-hidden="true">
+                &nbsp;Ingresa_a_CYBER/GAMES&nbsp;
+              </span>
+            </button>
+          </div>
+          <button className={style.button}>
             <Link to="/Home">Start the games</Link>
           </button>
         </div>
