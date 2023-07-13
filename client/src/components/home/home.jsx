@@ -58,48 +58,66 @@ const Home = () => {
           <Nav className={style.nav} />
           <div className={style.sidebar}>
             <div>
-              <h4 className={style.h3_select}>Elige el Genero del VideoGame</h4>
-              <select name="Genres" onChange={handleFilter}>
-                <optgroup label="Generos"></optgroup>
-                <option value="AllGeners">All Geners</option>
+              <h4 className={style.h4_select}>
+                {" "}
+                <span>Select VideoGame Genre.</span>{" "}
+              </h4>
+              <div className={style.selectors}>
+                <select name="Genres" onChange={handleFilter}>
+                  <optgroup label="Generos"></optgroup>
+                  <option value="AllGeners">All Geners</option>
 
-                {allGenres?.map((genres) => {
-                  return (
-                    <option value={genres} key={genres}>
-                      {genres}
-                    </option>
-                  );
-                })}
-              </select>
+                  {allGenres?.map((genres) => {
+                    return (
+                      <option value={genres} key={genres}>
+                        {genres}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
             </div>
             <div>
-              <h4 className={style.h3_select}>Orden Alfabeticamente</h4>
-              <select name="Alfabeticamente" onChange={handleOrderAz}>
-                <optgroup label="Orden Alfabetico"></optgroup>
-                <option value="Default">Default</option>
+              <h4 className={style.h4_select}>
+                <span>Alphabetical Order.</span>
+              </h4>
+              <div className={style.selectors}>
+                <select name="Alfabeticamente" onChange={handleOrderAz}>
+                  <optgroup label="Orden Alfabetico"></optgroup>
+                  <option value="Default">Default</option>
 
-                <option value="A-Z">A-Z</option>
-                <option value="Z-A">Z-A</option>
-              </select>
+                  <option value="A-Z">A-Z</option>
+                  <option value="Z-A">Z-A</option>
+                </select>
+              </div>
             </div>
             <div>
-              <h4 className={style.h3_select}>Orden Ratings</h4>
-              <select name="Ratings" onChange={handleOrderRatings}>
-                <optgroup label="Ratings"></optgroup>
-                <option value="Default">Default</option>
-                <option value="MinRating">⭐</option>
-                <option value="MaxRating">⭐⭐⭐⭐⭐</option>
-              </select>
+              <h4 className={style.h4_select}>
+                <span>Orden Ratings</span>
+              </h4>
+              <div className={style.selectors}>
+                <select name="Ratings" onChange={handleOrderRatings}>
+                  <optgroup label="Ratings"></optgroup>
+                  <option value="Default">Default</option>
+                  <option value="MinRating">⭐</option>
+                  <option value="MaxRating">⭐⭐⭐⭐⭐</option>
+                </select>
+              </div>
             </div>
             <div>
-              <h4 className={style.h3_select}>Filtro de tipo Juego</h4>
-              <select name="Juegos" onChange={handleGames}>
-                <optgroup label="Tipo de Juegos"></optgroup>
+              <h4 className={style.h4_select}>
+                {" "}
+                <span>Game Type Filter.</span>
+              </h4>
+              <div className={style.selectors}>
+                <select name="Juegos" onChange={handleGames}>
+                  <optgroup label="Tipo de Juegos"></optgroup>
 
-                <option value="default"> Default</option>
-                <option value="Api"> Api</option>
-                <option value="Db"> Db</option>
-              </select>
+                  <option value="default"> Default</option>
+                  <option value="Api"> Api</option>
+                  <option value="Db"> Db</option>
+                </select>
+              </div>
             </div>
           </div>
           <Cards className={style.cards} />{" "}
