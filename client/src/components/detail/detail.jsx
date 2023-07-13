@@ -31,24 +31,24 @@ const Detail = () => {
     <div>
       <div className={style.contenedorDetail}>
         <div className={style.imgconteiner}>
-          <h1 className={style.IdH4}>ID: {videogameid?.id}</h1>
+          <h1 className={style.IdH4}>ID: {videogameid?.apiId}</h1>
           <img src={videogameid?.image} alt={videogameid?.name} />
           <h1 className={style.title}>{videogameid?.name}</h1>
         </div>
         <span>Género: </span>
-        <h2> {videogameid?.genres}</h2>
+        <h2 className={style.genres}> {videogameid?.genres}</h2>
         <div></div>
         <span>Descripción: </span>
-        <span>{videogameid?.description}</span>
+        <span className={style.description}>{videogameid?.description}</span>
 
         <span>Plataformas: </span>
-        <span>{videogameid?.platforms} </span>
+        <span className={style.platforms}>{videogameid?.platforms} </span>
 
         <span>Fecha: </span>
+        <span className={style.fecha}>{videogameid?.fecha}</span>
 
-        <span> {videogameid?.fecha}</span>
         <span>Rating:</span>
-        <span> {videogameid?.rating} </span>
+        <span className={style.rating}> {videogameid?.rating} </span>
 
         <div>{renderStars()}</div>
       </div>

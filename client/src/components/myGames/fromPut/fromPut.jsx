@@ -71,7 +71,7 @@ function FormPut() {
           type="number"
           name="id"
           placeholder="Id Para Editar"
-          autocomplete="off"
+          autoComplete="off"
           onChange={HandleonChange}
         />
         {errors.id && <span className={style.spans}>{errors.id}</span>}
@@ -81,7 +81,7 @@ function FormPut() {
           type="text"
           name="name"
           placeholder="Name"
-          autocomplete="off"
+          autoComplete="off"
           onChange={HandleonChange}
         />
         <label htmlFor="">Plataforma Del Videojuego</label>
@@ -90,7 +90,7 @@ function FormPut() {
           type="text"
           name="plataformas"
           placeholder="Plataformas"
-          autocomplete="off"
+          autoComplete="off"
           onChange={HandleonChange}
         />
         {errors.plataformas && (
@@ -102,7 +102,7 @@ function FormPut() {
           type="text"
           name="description"
           placeholder="Descripcion"
-          autocomplete="off"
+          autoComplete="off"
           onChange={HandleonChange}
         />
         {errors.description && (
@@ -114,7 +114,7 @@ function FormPut() {
           type="text"
           name="image"
           placeholder="Url"
-          autocomplete="off"
+          autoComplete="off"
           onChange={HandleonChange}
         />
         {errors.image && <span className={style.spans}>{errors.image}</span>}
@@ -124,7 +124,7 @@ function FormPut() {
           type="date"
           name="fecha"
           placeholder="Fecha"
-          autocomplete="off"
+          autoComplete="off"
           onChange={HandleonChange}
         />
         {errors.fecha && <span className={style.spans}>{errors.fecha}</span>}

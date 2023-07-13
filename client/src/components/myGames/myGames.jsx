@@ -40,7 +40,7 @@ function Mygames() {
   };
 
   return (
-    <div>
+    <div className={style.fondo}>
       <div>
         <div className={style.buttonsDiv}>
           <button onClick={handleResetClick}>Crear Videogame</button>
