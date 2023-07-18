@@ -15,7 +15,7 @@ const postVideogames = async (req, res) => {
   const count = await Videogame.count();
   const nextId = count + 960529;
   const existeVg = (await Videogame.findAll()).filter(
-    (existe) => existe.id === id
+    (existe) => existe.id === nextId
   );
   if (existeVg.length === 1) {
     return res.status(201).json({ message: `Videogame Existente` });
@@ -36,7 +36,7 @@ const postVideogames = async (req, res) => {
       name: genres,
     });
 
-    await newVG.addGenres(genrNam);
+    await newVG.addGenre(genrNam);
 
     return res.status(201).json({
       message: `Video game created successfully and the Id to edit or delete is ${nextId}`,

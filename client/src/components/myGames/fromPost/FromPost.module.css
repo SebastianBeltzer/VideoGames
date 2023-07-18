@@ -50,15 +50,15 @@
 }
 
 form {
-  margin-top: 3rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 800px;
   background-color: #fff;
   padding: 20px;
   border-radius: 20px;
   position: relative;
-  left: 37%;
+  left: 230px;
 }
 
 .title {
@@ -69,7 +69,7 @@ form {
   position: relative;
   display: flex;
   align-items: center;
-  padding-left: 80px;
+  left: 350px;
 }
 
 .title::before,
@@ -79,7 +79,7 @@ form {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  left: 0px;
+  left: -30px;
   background-color: rgb(229, 156, 19);
 }
 
@@ -91,10 +91,6 @@ form {
 
 .button_env {
   margin-top: 2rem;
-}
-
-.inputss {
-  margin-left: 10rem;
 }
 
 .title::after {
@@ -113,4 +109,19 @@ form {
     transform: scale(1.8);
     opacity: 0;
   }
+}
+
+.newContenedor {
+  display: flex;
+}
+.izq {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.der {
+  flex-basis: 50%;
+  margin-top: 1rem;
 }

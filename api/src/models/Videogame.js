@@ -35,10 +35,7 @@ module.exports = (sequelize) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-      // apiId: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: false,
-      // },
+
       createInDb: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

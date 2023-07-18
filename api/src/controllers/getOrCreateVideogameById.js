@@ -47,7 +47,7 @@ const getOrCreateVideogameById = async (req, res) => {
       const videoGame = videogame;
       const idResults = {
         name: videoGame.name,
-        apiId: videoGame.apiId,
+        id: videoGame.id,
         description: videoGame.description,
         genres: videoGame.Genres.map((genre) => genre.name).join(", "),
         platforms: videoGame.platforms

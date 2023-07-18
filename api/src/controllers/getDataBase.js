@@ -12,9 +12,9 @@ const getDataBase = async () => {
       name: el.name,
       id: el.id,
       description: el.description,
-      genres: el.Genres ? el.Genres.map((genre) => genre.name) : [],
+      genres: el.genres?.map((genre) => genre.name),
       platforms: el.plataformas,
-      date: el.fecha,
+      date: el.date,
       rating: el.rating,
       image: el.image,
     };

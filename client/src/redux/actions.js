@@ -165,7 +165,7 @@ export const getAllVG = () => {
 export const getAllPosts = (event) => {
   // get all posts
   try {
-    const endpoint = "http://localhost:3001/videogames";
+    const endpoint = "http://localhost:4000/videogames";
 
     return async (dispatch) => {
       const { data } = await axios.get(endpoint);

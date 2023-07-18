@@ -40,7 +40,9 @@ function FormPost() {
       } else {
         setPost({
           ...post,
-          genres: [...post.genres.split(", "), event.target.value].join(", "),
+          genres: post.genres
+            ? [...post.genres.split(", "), event.target.value].join(", ")
+            : event.target.value,
         });
       }
     } else {
@@ -82,96 +84,104 @@ function FormPost() {
     <div>
       <form onSubmit={handleOnSubmit}>
         <p className={style.title}>Crea Tu Game </p>
-        <label htmlFor="">Nombre Del Juego</label>
-        <input
-          className={style.inputss}
-          type="text"
-          name="name"
-          autocomplete="off"
-          placeholder="Name"
-          onChange={HandleonChange}
-        />
-        {errors.name && <span className={style.spans}>{errors.name}</span>}
-        <label htmlFor="">Plataforma Del Videojuego</label>
-        <input
-          className={style.inputss}
-          type="text"
-          name="platforms"
-          autocomplete="off"
-          placeholder="Platforms"
-          onChange={HandleonChange}
-        />
-        {errors.platforms && (
-          <span className={style.spans}>{errors.platforms}</span>
-        )}
-        <label htmlFor="">Descripcion del Juego</label>
-        <input
-          className={style.inputss}
-          type="text"
-          name="description"
-          autocomplete="off"
-          placeholder="Descripcion"
-          onChange={HandleonChange}
-        />
-        {errors.description && (
-          <span className={style.spans}>{errors.description}</span>
-        )}
-        <label htmlFor="">Imagen del Juego</label>
-        <input
-          className={style.inputss}
-          type="text"
-          name="image"
-          autocomplete="off"
-          placeholder="Url"
-          onChange={HandleonChange}
-        />
-        {errors.image && <span className={style.spans}>{errors.image}</span>}
-        <label htmlFor="">date del Videojuego</label>
-        <input
-          className={style.inputss}
-          type="date"
-          name="date"
-          autocomplete="off"
-          placeholder="date"
-          onChange={HandleonChange}
-        />
-        {errors.date && <span className={style.spans}>{errors.date}</span>}
-        <label htmlFor="">Rating del Videojuego</label>
-        <div>{renderStars()}</div>
-        <input
-          className={style.inputss}
-          type="range"
-          autocomplete="off"
-          name="rating"
-          min="1"
-          max="5"
-          step="0.01"
-          onChange={HandleonChange}
-        />{" "}
-        <span className={style.spans} id="ratingValue">
-          Rating: {post.rating}{" "}
-        </span>
-        <label htmlFor="">Genero del Videojuego</label> <br />
-        <div
-          className={style.content}
-          style={{ display: "flex", flexWrap: "wrap" }}
-        >
-          {allGenres?.map((genres) => (
-            <span
-              className={style.spans}
-              style={{ flexBasis: "30%", marginBottom: "1px" }}
-              key={genres}
-            >
-              {genres}
-              <input
-                type="checkbox"
-                className={style.checkbox}
-                name="genres"
-                value={genres}
-                onChange={HandleonChange}
-              />
+        <div className={style.newContenedor}>
+          <div className={style.izq}>
+            <label htmlFor="">Nombre Del Juego</label>
+            <input
+              className={style.inputss}
+              type="text"
+              name="name"
+              autocomplete="off"
+              placeholder="Name"
+              onChange={HandleonChange}
+            />
+            {errors.name && <span className={style.spans}>{errors.name}</span>}
+            <label htmlFor="">Plataforma Del Videojuego</label>
+            <input
+              className={style.inputss}
+              type="text"
+              name="platforms"
+              autocomplete="off"
+              placeholder="Platforms"
+              onChange={HandleonChange}
+            />
+            {errors.platforms && (
+              <span className={style.spans}>{errors.platforms}</span>
+            )}
+            <label htmlFor="">Descripcion del Juego</label>
+            <input
+              className={style.inputss}
+              type="text"
+              name="description"
+              autocomplete="off"
+              placeholder="Descripcion"
+              onChange={HandleonChange}
+            />
+            {errors.description && (
+              <span className={style.spans}>{errors.description}</span>
+            )}
+            <label htmlFor="">Imagen del Juego</label>
+            <input
+              className={style.inputss}
+              type="text"
+              name="image"
+              autocomplete="off"
+              placeholder="Url"
+              onChange={HandleonChange}
+            />
+            {errors.image && (
+              <span className={style.spans}>{errors.image}</span>
+            )}
+            <label htmlFor="">date del Videojuego</label>
+            <input
+              className={style.inputss}
+              type="date"
+              name="date"
+              autocomplete="off"
+              placeholder="date"
+              onChange={HandleonChange}
+            />
+            {errors.date && <span className={style.spans}>{errors.date}</span>}
+            <label htmlFor="">Rating del Videojuego</label>
+            <div>{renderStars()}</div>
+            <input
+              className={style.inputss}
+              type="range"
+              autocomplete="off"
+              name="rating"
+              min="1"
+              max="5"
+              step="0.01"
+              onChange={HandleonChange}
+            />{" "}
+            <span className={style.spans} id="ratingValue">
+              Rating: {post.rating}{" "}
             </span>
-          ))}
+          </div>
+          <div className={style.der}>
+            <label htmlFor="">Genero del Videojuego</label> <br />
+            <div
+              className={style.content}
+              style={{ display: "flex", flexWrap: "wrap" }}
+            >
+              {allGenres?.map((genres) => (
+                <span
+                  className={style.spans}
+                  style={{ flexBasis: "30%", marginBottom: "1px" }}
+                  key={genres}
+                >
+                  {genres}
+                  <input
+                    type="checkbox"
+                    className={style.checkbox}
+                    name="genres"
+                    value={genres}
+                    onChange={HandleonChange}
+                  />
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
         <button
           className={style.button_env}

@@ -1,5 +1,5 @@
 .fondo {
-  /* Establece el posicionamiento fijo */
+  position: fixed; /* Establece el posicionamiento fijo */
   top: 0; /* Coloca el elemento en la parte superior */
   left: 0; /* Coloca el elemento en la parte izquierda */
   height: 100vh; /* Establece la altura al 100% de la ventana */

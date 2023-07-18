@@ -45,7 +45,7 @@ const Detail = () => {
         <span className={style.platforms}>{videogameid?.platforms} </span>
 
         <span>Fecha: </span>
-        <span className={style.fecha}>{videogameid?.fecha}</span>
+        <span className={style.fecha}>{videogameid?.date}</span>
 
         <span>Rating:</span>
         <span className={style.rating}> {videogameid?.rating} </span>
