@@ -31,7 +31,7 @@ const Detail = () => {
     <div>
       <div className={style.contenedorDetail}>
         <div className={style.imgconteiner}>
-          <h1 className={style.IdH4}>ID: {videogameid?.apiId}</h1>
+          <h1 className={style.IdH4}>ID: {videogameid?.id}</h1>
           <img src={videogameid?.image} alt={videogameid?.name} />
           <h1 className={style.title}>{videogameid?.name}</h1>
         </div>

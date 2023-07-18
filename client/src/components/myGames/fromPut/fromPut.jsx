@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getGenres } from "../../../redux/actions";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import validate from "./validate";
 import { putVG } from "../../../redux/actions";
 import style from "../fromPost/FromPost.module.css";

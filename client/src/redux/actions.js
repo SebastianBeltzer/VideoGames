@@ -93,6 +93,7 @@ export const getVGName = (name) => {
     }
   };
 };
+
 export function filterCards(genre) {
   const endpoint = "http://localhost:4000/videogames";
   return async (dispatch) => {
@@ -114,6 +115,7 @@ export function filterCards(genre) {
     }
   };
 }
+
 export function OrderCardsAz(order) {
   const endpoint = "http://localhost:4000/videogames";
   return async (dispatch) => {
@@ -163,7 +165,7 @@ export const getAllVG = () => {
 export const getAllPosts = (event) => {
   // get all posts
   try {
-    const endpoint = "http://localhost:4000/videogames";
+    const endpoint = "http://localhost:3001/videogames";
 
     return async (dispatch) => {
       const { data } = await axios.get(endpoint);
@@ -171,6 +173,20 @@ export const getAllPosts = (event) => {
         return dispatch({
           type: GET_ALL_POSTS,
           payload: data,
+        });
+      }
+      if (event === "Api") {
+        const gamesAPI = data?.filter((game) => game.createInDb === "Api");
+        return dispatch({
+          type: GET_ALL_POSTS,
+          payload: gamesAPI,
+        });
+      }
+      if (event === "Db") {
+        const gamesDB = data?.filter((game) => game.createInDb !== "Api");
+        return dispatch({
+          type: GET_ALL_POSTS,
+          payload: gamesDB,
         });
       }
     };

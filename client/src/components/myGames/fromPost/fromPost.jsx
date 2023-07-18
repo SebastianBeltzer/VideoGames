@@ -14,8 +14,8 @@ function FormPost() {
     name: "",
     description: "",
     genres: "",
-    plataformas: "",
-    fecha: "",
+    platforms: "",
+    date: "",
     rating: "",
     image: "",
   });
@@ -23,8 +23,8 @@ function FormPost() {
     name: "",
     description: "",
     genres: "",
-    plataformas: "",
-    fecha: "",
+    platforms: "",
+    date: "",
     rating: "",
     image: "",
   });
@@ -96,13 +96,13 @@ function FormPost() {
         <input
           className={style.inputss}
           type="text"
-          name="plataformas"
+          name="platforms"
           autocomplete="off"
-          placeholder="Plataformas"
+          placeholder="Platforms"
           onChange={HandleonChange}
         />
-        {errors.plataformas && (
-          <span className={style.spans}>{errors.plataformas}</span>
+        {errors.platforms && (
+          <span className={style.spans}>{errors.platforms}</span>
         )}
         <label htmlFor="">Descripcion del Juego</label>
         <input
@@ -126,16 +126,16 @@ function FormPost() {
           onChange={HandleonChange}
         />
         {errors.image && <span className={style.spans}>{errors.image}</span>}
-        <label htmlFor="">Fecha del Videojuego</label>
+        <label htmlFor="">date del Videojuego</label>
         <input
           className={style.inputss}
           type="date"
-          name="fecha"
+          name="date"
           autocomplete="off"
-          placeholder="Fecha"
+          placeholder="date"
           onChange={HandleonChange}
         />
-        {errors.fecha && <span className={style.spans}>{errors.fecha}</span>}
+        {errors.date && <span className={style.spans}>{errors.date}</span>}
         <label htmlFor="">Rating del Videojuego</label>
         <div>{renderStars()}</div>
         <input
@@ -178,15 +178,15 @@ function FormPost() {
           disabled={
             !post.name ||
             !post.genres ||
-            !post.plataformas ||
-            !post.fecha ||
+            !post.platforms ||
+            !post.date ||
             !post.rating ||
             !post.image ||
             !post.description ||
             errors.name ||
             errors.genres ||
-            errors.plataformas ||
-            errors.fecha ||
+            errors.platforms ||
+            errors.date ||
             errors.image ||
             errors.description
           }

@@ -7,10 +7,9 @@ module.exports = (sequelize) => {
     "videogame",
     {
       id: {
-        type: DataTypes.UUID,
-        primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
       },
       name: {
         type: DataTypes.STRING,
@@ -36,9 +35,14 @@ module.exports = (sequelize) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-      apiId: {
-        type: DataTypes.INTEGER,
+      // apiId: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: false,
+      // },
+      createInDb: {
+        type: DataTypes.BOOLEAN,
         allowNull: false,
+        defaultValue: true,
       },
     },
     { timestamps: false }

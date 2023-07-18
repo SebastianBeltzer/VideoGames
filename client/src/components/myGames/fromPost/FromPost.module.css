@@ -26,7 +26,7 @@
 .checkBox div {
   width: 60px;
   height: 60px;
-
+  background-color: #fff;
   top: -52px;
   left: -52px;
   position: absolute;
@@ -54,7 +54,7 @@ form {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  background-color: #272727;
+  background-color: #fff;
   padding: 20px;
   border-radius: 20px;
   position: relative;
@@ -113,51 +113,4 @@ form {
     transform: scale(1.8);
     opacity: 0;
   }
-}
-
-.title {
-  font-size: 24px;
-  color: yellow;
-  margin-bottom: 20px;
-}
-
-label {
-  color: yellow;
-  margin-bottom: 5px;
-}
-
-.inputss {
-  border-radius: 5px;
-  background-color: #333333;
-  color: yellow;
-}
-
-.spans {
-  color: red;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.button_env {
-  background-color: yellow;
-  color: #333333;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.button_env:disabled {
-  background-color: #aaaaaa;
-  cursor: not-allowed;
-}
-
-.content {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.checkbox {
-  margin-right: 5px;
 }

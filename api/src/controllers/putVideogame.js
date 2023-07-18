@@ -13,7 +13,7 @@ const updateVideogame = async (update) => {
       },
       {
         where: {
-          apiId: update.id,
+          id: update.id,
         },
       }
     );

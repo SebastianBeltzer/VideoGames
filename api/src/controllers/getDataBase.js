@@ -10,9 +10,9 @@ const getDataBase = async () => {
     // mapeo y mando solo lo que quiero mostrar en la web de posteos
     return {
       name: el.name,
-      apiId: el.id,
+      id: el.id,
       description: el.description,
-      genres: el.Genres.map((genre) => genre.name),
+      genres: el.Genres ? el.Genres.map((genre) => genre.name) : [],
       platforms: el.plataformas,
       date: el.fecha,
       rating: el.rating,

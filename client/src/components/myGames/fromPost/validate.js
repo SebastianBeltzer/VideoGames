@@ -26,15 +26,15 @@ const validate = (post) => {
     errors.genres = "Se requiere que este lleno el campo";
   }
 
-  if (post.plataformas.length === "") {
-    errors.plataformas = "Se requiere que este lleno el campo";
+  if (post.platforms.length === "") {
+    errors.platforms = "Se requiere que este lleno el campo";
   }
 
-  if (post.plataformas.length < 2) {
-    errors.plataformas = "Debe ser mayor a 2 digitos";
+  if (post.platforms.length < 2) {
+    errors.platforms = "Debe ser mayor a 2 digitos";
   }
-  if (post.plataformas.length > 10) {
-    errors.plataformas = "Debe ser menor a 10 digitos";
+  if (post.platforms.length > 10) {
+    errors.platforms = "Debe ser menor a 10 digitos";
   }
 
   if (post.rating.length === "") {

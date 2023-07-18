@@ -9,7 +9,7 @@ const getIdVideogame = async (req, res) => {
 
     const videogame = await Videogame.findOne({
       where: {
-        apiId: id,
+        id: id,
       },
     });
     if (!videogame) {
@@ -19,7 +19,7 @@ const getIdVideogame = async (req, res) => {
       const videoGame = data;
       const idResults = {
         name: videoGame.name,
-        apiId: videoGame.id,
+        id: videoGame.id,
         description: videoGame.description_raw,
         genres: videoGame.genres.map((genre) => genre.name).join(", "),
         platforms: videoGame.platforms

@@ -5,7 +5,7 @@ const { Videogame, Genre } = require("../../db");
 const deleteVideogame = require("../../controllers/deleteVideogame");
 const putVideogame = require("../../controllers/putVideogame");
 const getDataBase = require("../../controllers/getDataBase");
-const postVideogames = require("../../controllers/postvideogame");
+const postVideogames = require("../../controllers/postVideogame");
 
 router.get("/", async (req, res) => {
   try {
@@ -19,11 +19,11 @@ router.get("/", async (req, res) => {
       // mapeo y  mando solo lo que quiero mostrar en la web de posteos
       return {
         name: element.name,
-        id: element.id,
+        apiId: element.id,
         description: element.description,
         genres: element.Genres.map((genre) => genre.name),
-        plataformas: element.plataformas,
-        fecha: element.fecha,
+        platforms: element.plataformas,
+        date: element.fecha,
         rating: element.rating,
         image: element.image,
       };
