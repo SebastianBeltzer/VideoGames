@@ -11,6 +11,7 @@ const getIdVideogame = async (req, res) => {
       where: {
         id: id,
       },
+      include: Genre,
     });
     if (!videogame) {
       const { data } = await axios(
@@ -32,7 +33,21 @@ const getIdVideogame = async (req, res) => {
 
       return res.status(200).json(idResults);
     }
-    return res.status(200).json(videogame);
+    const genres = videogame.genres.map((genre) => genre.name).join(", "); // Obtén los nombres de los géneros en formato de cadena
+
+    const idResults = {
+      id: videogame.id,
+      name: videogame.name,
+      description: videogame.description,
+      platforms: videogame.platforms,
+      image: videogame.image,
+      date: videogame.date,
+      rating: videogame.rating,
+      createInDb: videogame.createInDb,
+      genres: genres, // Asigna los nombres de los géneros en formato de cadena
+    };
+
+    return res.status(200).json(idResults);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
