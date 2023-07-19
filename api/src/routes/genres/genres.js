@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
     res.status(404).send("not found");
   }
 });
+
 router.get("/db", async (req, res) => {
   try {
     const dbG = await Genre.findAll();

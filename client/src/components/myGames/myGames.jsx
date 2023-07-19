@@ -18,12 +18,12 @@ function Mygames() {
     setDiv4Enabled(false);
   };
 
-  const handleButton2Click = () => {
-    setDiv1Enabled(false);
-    setDiv2Enabled(true);
-    setDiv3Enabled(false);
-    setDiv4Enabled(false);
-  };
+  // const handleButton2Click = () => {
+  //   setDiv1Enabled(false);
+  //   setDiv2Enabled(true);
+  //   setDiv3Enabled(false);
+  //   setDiv4Enabled(false);
+  // };
 
   // const handleButton3Click = () => {
   //     setDiv1Enabled(false);
@@ -44,16 +44,16 @@ function Mygames() {
       <div>
         <div className={style.buttonsDiv}>
           <button onClick={handleResetClick}>Crear Videogame</button>
-          <button onClick={handleButton2Click}>Editar videogame</button>
+          {/*<button onClick={handleButton2Click}>Editar videogame</button>*/}
           <button onClick={handleButton1Click}>Borrar Videogame</button>
         </div>
 
         <div style={{ display: div1Enabled ? "block" : "none" }}>
           <FormPost />
         </div>
-        <div style={{ display: div2Enabled ? "block" : "none" }}>
+        {/*<div style={{ display: div2Enabled ? "block" : "none" }}>
           <FormPut />
-        </div>
+  </div>*/}
         <div style={{ display: div3Enabled ? "block" : "none" }}>
           <FormDelete />
         </div>

@@ -12,7 +12,7 @@ const deleteVideogame = async (req, res) => {
     }
     await Videogame.destroy({
       where: {
-        id,
+        id: id,
       },
     });
 

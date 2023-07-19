@@ -23,8 +23,8 @@ function FormPut() {
     name: "",
     description: "",
     genres: "",
-    plataformas: "",
-    fecha: "",
+    platforms: "",
+    date: "",
     rating: "",
     image: "",
   });
