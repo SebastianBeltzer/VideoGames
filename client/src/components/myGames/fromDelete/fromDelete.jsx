@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import style from "../fromPost/FromPost.module.css";
+import style from "./fromdelete.module.css";
 import { removeVG } from "../../../redux/actions";
 const FormDelete = () => {
   const dispatch = useDispatch();
@@ -21,17 +21,20 @@ const FormDelete = () => {
     alert("El Juego a sido Borrado!");
   };
   return (
-    <div onSubmit={handleOnSubmit}>
-      <form action="">
-        <label htmlFor="">Id para eliminar el game</label>
+    <div className={style.formContainer}>
+      <form onSubmit={handleOnSubmit}>
+        <label className={style.label} htmlFor="id">
+          Id para eliminar el juego
+        </label>
         <input
           className={style.inputss}
-          type="number"
+          type="text"
           name="id"
-          placeholder="Id para Eliminar el game"
+          id="id"
+          placeholder="Id para Eliminar el juego"
           onChange={HandleonChange}
         />
-        <button className={style.button_env} disabled={!deleteid.id}>
+        <button className={style.buttonEnv} disabled={!deleteid.id}>
           Borrar
         </button>
       </form>

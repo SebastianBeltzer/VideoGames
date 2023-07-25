@@ -26,7 +26,7 @@ export const addVG = (videogame) => {
         payload: data,
       });
     } catch (error) {
-      alert(error.message);
+      console.error(error);
     }
   };
 };
@@ -89,7 +89,7 @@ export const getVGName = (name) => {
         payload: data,
       });
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
   };
 };

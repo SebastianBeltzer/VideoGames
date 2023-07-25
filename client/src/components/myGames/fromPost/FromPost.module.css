@@ -7,8 +7,8 @@
 }
 
 .spans {
-  color: gray;
-  font-size: 9px;
+  color: rgb(174, 46, 46);
+  font-size: 12px;
 }
 
 .checkBox {
@@ -20,13 +20,13 @@
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0px 0px 0px 2px #fff;
+  box-shadow: 0px 0px 0px 2px #303030;
 }
 
 .checkBox div {
   width: 60px;
   height: 60px;
-  background-color: #fff;
+  background-color: #303030;
   top: -52px;
   left: -52px;
   position: absolute;
@@ -50,43 +50,17 @@
 }
 
 form {
-  margin-top: 5rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   max-width: 800px;
-  background-color: #fff;
+
+  background-color: #303030;
   padding: 20px;
   border-radius: 20px;
   position: relative;
   left: 230px;
-}
-
-.title {
-  font-size: 28px;
-  color: rgb(229, 156, 19);
-  font-weight: 600;
-  letter-spacing: -1px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  left: 350px;
-}
-
-.title::before,
-.title::after {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  left: -30px;
-  background-color: rgb(229, 156, 19);
-}
-
-.title::before {
-  width: 18px;
-  height: 18px;
-  background-color: rgb(229, 156, 19);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra sutil */
 }
 
 .button_env {
@@ -113,6 +87,7 @@ form {
 
 .newContenedor {
   display: flex;
+  margin-top: 30px;
 }
 .izq {
   flex-basis: 50%;
@@ -124,4 +99,70 @@ form {
 .der {
   flex-basis: 50%;
   margin-top: 1rem;
+}
+
+.izq label {
+  color: rgb(228, 213, 213);
+  margin-bottom: 2px;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.der label {
+  color: rgb(228, 213, 213);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.span {
+  color: rgb(228, 213, 213);
+  font-size: medium;
+}
+
+.izq input {
+  width: 300px; /* Hace que todos los inputs tengan el mismo ancho */
+  padding: 8px;
+  border: 2px solid #555; /* Agrega un borde */
+  border-radius: 5px;
+  background-color: #111; /* Color de fondo oscuro */
+  color: #fff; /* Color del texto */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil */
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content .span {
+  flex-basis: 30%;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.content .span label {
+  margin-right: 5px;
+}
+.rtg {
+  width: 300px; /* Hace que todos los inputs tengan el mismo ancho */
+  padding: 8px;
+  border: 2px solid #555; /* Agrega un borde */
+  border-radius: 5px;
+  background-color: #111; /* Color de fondo oscuro */
+  color: #fff; /* Color del texto */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil */
+}
+.gnr label {
+  font-size: 20px;
+  margin-left: -20px;
+}
+.rtg span {
+  color: rgb(219, 201, 60);
+}
+.title {
+  position: absolute;
+  top: -20px;
+  left: 40%;
+  font-size: 30px;
+  color: rgb(215, 206, 195);
 }

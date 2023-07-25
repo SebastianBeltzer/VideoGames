@@ -3,22 +3,17 @@ const { Videogame, Genre } = require("../db");
 require("dotenv").config();
 const KEY = process.env.API_KEY;
 
+const isValidUUID = (id) => {
+  const uuidRegex =
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  return uuidRegex.test(id);
+};
 // Función asincrónica para obtener un videojuego por su ID
 const getIdVideogame = async (req, res) => {
   try {
     const { id } = req.params; // Obtenemos el ID del videojuego de los parámetros de la solicitud
 
-    // Buscamos el videojuego en la base de datos local
-    const videogame = await Videogame.findOne({
-      where: {
-        id: id,
-      },
-      include: Genre,
-    });
-
-    if (!videogame) {
-      // Si el videojuego no existe en la base de datos local, lo buscamos en la API externa
-
+    if (!isValidUUID(id)) {
       // Hacemos una solicitud a la API externa para obtener el videojuego por su ID
       const { data } = await axios(
         `https://api.rawg.io/api/games/${id}?key=${KEY}`
@@ -42,6 +37,12 @@ const getIdVideogame = async (req, res) => {
       // Enviamos los datos del videojuego obtenidos desde la API con un código 200.
       return res.status(200).json(idResults);
     }
+    const videogame = await Videogame.findOne({
+      where: {
+        id: id,
+      },
+      include: Genre,
+    });
 
     // Si el videojuego existe en la base de datos local, obtenemos los géneros en formato de cadena
     const genres = videogame.genres.map((genre) => genre.name).join(", ");

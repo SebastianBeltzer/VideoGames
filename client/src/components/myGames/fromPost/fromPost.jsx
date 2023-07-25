@@ -142,44 +142,50 @@ function FormPost() {
               onChange={HandleonChange}
             />
             {errors.date && <span className={style.spans}>{errors.date}</span>}
-            <label htmlFor="">Rating del Videojuego</label>
-            <div>{renderStars()}</div>
-            <input
-              className={style.inputss}
-              type="range"
-              autocomplete="off"
-              name="rating"
-              min="1"
-              max="5"
-              step="0.01"
-              onChange={HandleonChange}
-            />{" "}
-            <span className={style.spans} id="ratingValue">
-              Rating: {post.rating}{" "}
-            </span>
           </div>
           <div className={style.der}>
-            <label htmlFor="">Genero del Videojuego</label> <br />
-            <div
-              className={style.content}
-              style={{ display: "flex", flexWrap: "wrap" }}
-            >
-              {allGenres?.map((genres) => (
-                <span
-                  className={style.spans}
-                  style={{ flexBasis: "30%", marginBottom: "1px" }}
-                  key={genres}
-                >
-                  {genres}
-                  <input
-                    type="checkbox"
-                    className={style.checkbox}
-                    name="genres"
-                    value={genres}
-                    onChange={HandleonChange}
-                  />
-                </span>
-              ))}
+            <div className={style.rtg}>
+              <label htmlFor="">Rating del Videojuego</label>
+              <div>{renderStars()}</div>
+              <input
+                className={style.inputss}
+                type="range"
+                autocomplete="off"
+                name="rating"
+                min="1"
+                max="5"
+                step="0.01"
+                onChange={HandleonChange}
+              />{" "}
+              <br />
+              <span className={style.spans} id="ratingValue">
+                Rating: {post.rating}{" "}
+              </span>{" "}
+              <br />
+            </div>
+            <div className={style.gnr}>
+              <label htmlFor="">Genero del Videojuego</label>
+              <div
+                className={style.content}
+                style={{ display: "flex", flexWrap: "wrap" }}
+              >
+                {allGenres?.map((genres) => (
+                  <span
+                    className={style.span}
+                    style={{ flexBasis: "30%", marginBottom: "1px" }}
+                    key={genres}
+                  >
+                    {genres}
+                    <input
+                      type="checkbox"
+                      className={style.checkbox}
+                      name="genres"
+                      value={genres}
+                      onChange={HandleonChange}
+                    />
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -43,9 +43,13 @@ function Mygames() {
     <div className={style.fondo}>
       <div>
         <div className={style.buttonsDiv}>
-          <button onClick={handleResetClick}>Crear Videogame</button>
+          <button className={style.shadow__btn} onClick={handleResetClick}>
+            Crear Videogame
+          </button>
           {/*<button onClick={handleButton2Click}>Editar videogame</button>*/}
-          <button onClick={handleButton1Click}>Borrar Videogame</button>
+          <button className={style.shadow__btn2} onClick={handleButton1Click}>
+            Borrar Videogame
+          </button>
         </div>
 
         <div style={{ display: div1Enabled ? "block" : "none" }}>
